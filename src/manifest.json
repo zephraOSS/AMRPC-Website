@@ -2,7 +2,7 @@
     "name": "AMRPC",
     "short_name": "AMRPC",
     "theme_color": "#fa586a",
-    "background_color": "#2196f3",
+    "background_color": "#1F1F1F",
     "display": "browser",
     "scope": "/",
     "start_url": "/",
