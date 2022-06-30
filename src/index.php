@@ -8,6 +8,7 @@
     <meta name="msapplication-TileImage" content="https://cdn.zephra.cloud/amrpc/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#fa586a">
     <meta name="keywords" content="Apple Music RPC, iTunes RPC, Discord Apple Music RPC, Discord RPC open-source">
+    <meta name="description" content="AMRPC (Apple Music RPC) is a Discord Rich Presence for Apple Music and iTunes.">
 
     <link rel="apple-touch-icon" sizes="57x57" href="https://cdn.zephra.cloud/amrpc/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="https://cdn.zephra.cloud/amrpc/favicon/apple-icon-60x60.png">
