@@ -7,6 +7,8 @@
     <meta name="msapplication-TileColor" content="#fa586a">
     <meta name="msapplication-TileImage" content="https://cdn.zephra.cloud/amrpc/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#fa586a">
+    <meta name="keywords" content="Apple Music RPC, iTunes RPC, Discord Apple Music RPC, Discord RPC open-source">
+
     <link rel="apple-touch-icon" sizes="57x57" href="https://cdn.zephra.cloud/amrpc/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="https://cdn.zephra.cloud/amrpc/favicon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="https://cdn.zephra.cloud/amrpc/favicon/apple-icon-72x72.png">
@@ -22,9 +24,12 @@
     <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.zephra.cloud/amrpc/favicon/favicon-16x16.png">
     <link rel="shortcut icon" type="image/x-icon" href="https://cdn.zephra.cloud/amrpc/favicon/favicon.ico">
     <link rel="icon" type="image/x-icon" href="https://cdn.zephra.cloud/amrpc/favicon/favicon.ico">
+
     <link rel="manifest" href="manifest.json">
+
     <link rel="stylesheet" href="https://cdn.zephra.cloud/amrpc/css/style.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css">
+
     <title>AMRPC</title>
 </head>
 <body>
@@ -33,7 +38,7 @@
             <a href="#download">Download</a>
         </div>
         <div class="header-logo">
-            <img src="https://cdn.zephra.cloud/amrpc/applemusic.png" alt="AMRPC">
+            <img src="https://cdn.zephra.cloud/amrpc/applemusic.png" alt="AMRPC Logo">
         </div>
         <div class="header-title">
             <h1 class="title_title">AMRPC</h1>
@@ -43,7 +48,7 @@
 
     <div class="container">
         <div class="app-example">
-            <img src="https://cdn.zephra.cloud/amrpc/App.png" alt="App">
+            <img src="https://cdn.zephra.cloud/amrpc/App.png" alt="Screenshot of the app">
         </div>
 
         <div class="section">
