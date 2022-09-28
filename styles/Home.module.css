@@ -107,7 +107,7 @@
 }
 
 .downloadLinks img {
-    width: 128px;
+    width: 128px !important;
 }
 
 .featuresList {

@@ -12,8 +12,10 @@ const Home: NextPage = () => {
                     <a href="#download">Download</a>
                 </div>
                 <div className={styles.headerLogo}>
-                    <img
-                        src="https://cdn.zephra.cloud/amrpc/applemusic.png"
+                    <Image
+                        src="/applemusic.png"
+                        width={1260}
+                        height={1260}
                         alt="AMRPC Logo"
                     />
                 </div>
@@ -64,8 +66,8 @@ const Home: NextPage = () => {
                                 </div>
                                 <p>
                                     You can listen together to Apple Music with
-                                    your friends, even if you're not in the same
-                                    place!
+                                    your friends, even if you&apos;re not in the
+                                    same place!
                                 </p>
                             </div>
                         </div>
@@ -95,8 +97,10 @@ const Home: NextPage = () => {
 
                     <div className={styles.downloadLinks}>
                         <a href="https://github.com/ZephraCloud/Apple-Music-RPC/releases/latest">
-                            <img
-                                src="https://cdn.zephra.cloud/amrpc/download_github.png"
+                            <Image
+                                src="/download_github.png"
+                                width={761}
+                                height={264}
                                 alt="GitHub"
                             />
                         </a>
