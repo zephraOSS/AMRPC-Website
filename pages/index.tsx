@@ -18,7 +18,7 @@ const Home: NextPage = () => {
                     />
                 </div>
                 <div className={styles.headerTitle}>
-                    <h1 className={styles.titleTitle}>AMRPC V4.0</h1>
+                    <h1 className={styles.titleTitle}>AMRPC</h1>
                     <h2 className={styles.titleDescription}>
                         An Open-Source Discord RPC App for Apple Music and
                         iTunes
@@ -59,7 +59,7 @@ const Home: NextPage = () => {
                             <div className={styles.featureDescription}>
                                 <div className={styles.comingSoonContainer}>
                                     <span className={styles.comingSoon}>
-                                        Coming later this year
+                                        Coming soon
                                     </span>
                                 </div>
                                 <p>
