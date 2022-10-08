@@ -60,9 +60,16 @@ const Home: NextPage = () => {
                             </div>
                             <div className={styles.featureDescription}>
                                 <div className={styles.comingSoonContainer}>
-                                    <span className={styles.comingSoon}>
-                                        Coming soon
-                                    </span>
+                                    <a href="https://docs.amrpc.zephra.cloud/articles/listen-together">
+                                        <span className={styles.comingSoon}>
+                                            Canceled{" "}
+                                            <i
+                                                className={
+                                                    "fa-solid fa-circle-info"
+                                                }
+                                            ></i>
+                                        </span>
+                                    </a>
                                 </div>
                                 <p>
                                     You can listen together to Apple Music with

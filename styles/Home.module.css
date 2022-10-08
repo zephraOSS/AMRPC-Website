@@ -185,6 +185,10 @@
     border-radius: 16px;
 }
 
+.comingSoonContainer a {
+    text-decoration: none;
+}
+
 .smallNote {
     font-size: 0.8em;
     opacity: 0.9;
