@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 
 import Image from "next/image";
+import Script from "next/script";
 import React from "react";
 
 import styles from "../styles/Home.module.css";
@@ -36,10 +37,15 @@ const Home: NextPage = () => {
         setIsBefore(new Date().getTime() < new Date(releaseDate).getTime());
 
         return () => clearInterval(interval);
-    });
+    }, [releaseDate]);
 
     return (
         <>
+            <Script
+                type="module"
+                src="https://get.microsoft.com/badge/ms-store-badge.bundled.js"
+            ></Script>
+
             <div className={styles.header}>
                 <div className={styles.headerNavigation}>
                     <a href="#download">Download</a>

@@ -115,11 +115,6 @@ function MyApp({ Component, pageProps }: AppProps) {
                     href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css"
                 />
 
-                <script
-                    type="module"
-                    src="https://get.microsoft.com/badge/ms-store-badge.bundled.js"
-                ></script>
-
                 <title>AMRPC</title>
             </Head>
             <Component {...pageProps} />
