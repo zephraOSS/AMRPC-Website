@@ -1,10 +1,43 @@
 import type { NextPage } from "next";
 
 import Image from "next/image";
+import React from "react";
 
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
+    const releaseDate = "2022-12-01T10:00:00Z",
+        [isBefore, setIsBefore] = React.useState(
+            new Date().getTime() < new Date(releaseDate).getTime()
+        ),
+        [countdown, setCountdown] = React.useState({
+            days: 0,
+            hours: 0,
+            minutes: 0,
+            seconds: 0
+        });
+
+    React.useEffect(() => {
+        const interval = setInterval(() => {
+            const now = new Date().getTime(),
+                distance = new Date(releaseDate).getTime() - now,
+                days = Math.floor(distance / (1000 * 60 * 60 * 24)),
+                hours = Math.floor(
+                    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+                ),
+                minutes = Math.floor(
+                    (distance % (1000 * 60 * 60)) / (1000 * 60)
+                ),
+                seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            setCountdown({ days, hours, minutes, seconds });
+        }, 1000);
+
+        setIsBefore(new Date().getTime() < new Date(releaseDate).getTime());
+
+        return () => clearInterval(interval);
+    });
+
     return (
         <>
             <div className={styles.header}>
@@ -32,8 +65,8 @@ const Home: NextPage = () => {
                 <div className={styles.appExample}>
                     <Image
                         src="/App.png"
-                        width={797}
-                        height={598}
+                        width={1920}
+                        height={1400}
                         alt="Screenshot of the app"
                     />
                 </div>
@@ -43,52 +76,59 @@ const Home: NextPage = () => {
 
                     <div className={styles.featuresList}>
                         <div className={styles.featuresFeature}>
-                            <div className={styles.featureIcon}>
-                                <i className="fa-solid fa-brush"></i>
-                            </div>
-                            <div className={styles.featureDescription}>
-                                <p>
-                                    The album artwork is displayed in the
-                                    Discord RPC!
-                                </p>
-                            </div>
-                        </div>
-
-                        <div className={styles.featuresFeature}>
-                            <div className={styles.featureIcon}>
-                                <i className="fa-solid fa-users"></i>
-                            </div>
-                            <div className={styles.featureDescription}>
-                                <div className={styles.comingSoonContainer}>
-                                    <a href="https://docs.amrpc.zephra.cloud/articles/listen-together">
-                                        <span className={styles.comingSoon}>
-                                            Canceled{" "}
-                                            <i
-                                                className={
-                                                    "fa-solid fa-circle-info"
-                                                }
-                                            ></i>
-                                        </span>
-                                    </a>
+                            <div className={styles.featuresFeatureItem}>
+                                <div className={styles.featureIcon}>
+                                    <i
+                                        className={[
+                                            "fa-duotone fa-brush",
+                                            styles.featureIconBrush
+                                        ].join(" ")}
+                                    ></i>
                                 </div>
-                                <p>
-                                    You can listen together to Apple Music with
-                                    your friends, even if you&apos;re not in the
-                                    same place!
-                                </p>
+                                <div className={styles.featureDescription}>
+                                    <p>
+                                        The album artwork is displayed in the
+                                        Discord RPC!
+                                    </p>
+                                </div>
                             </div>
                         </div>
 
                         <div className={styles.featuresFeature}>
-                            <div className={styles.featureIcon}>
-                                <i className="fa-solid fa-meteor"></i>
+                            <div className={styles.featuresFeatureItem}>
+                                <div className={styles.featureIcon}>
+                                    <i
+                                        className={[
+                                            "fa-duotone fa-rocket-launch",
+                                            styles.featureIconRocket
+                                        ].join(" ")}
+                                    ></i>
+                                </div>
+                                <div className={styles.featureDescription}>
+                                    <p>
+                                        AMRPC is powered by our fast and
+                                        self-made Apple-Bridge!
+                                    </p>
+                                </div>
                             </div>
-                            <div className={styles.featureDescription}>
-                                <p>
-                                    AMRPC is available for Apple Music, iTunes
-                                    and Apple Music Electron on macOS and
-                                    Windows.
-                                </p>
+                        </div>
+
+                        <div className={styles.featuresFeature}>
+                            <div className={styles.featuresFeatureItem}>
+                                <div className={styles.featureIcon}>
+                                    <i
+                                        className={[
+                                            "fa-duotone fa-meteor",
+                                            styles.featureIconMeteor
+                                        ].join(" ")}
+                                    ></i>
+                                </div>
+                                <div className={styles.featureDescription}>
+                                    <p>
+                                        AMRPC is available for Apple Music and
+                                        iTunes.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -98,8 +138,30 @@ const Home: NextPage = () => {
                     <div>
                         <h1 className={styles.sectionTitle}>Download</h1>
                         <h2 className={styles.sectionDescription}>
-                            AMRPC is currently only available on GitHub.
+                            Download AMRPC from GitHub or the Microsoft Store.
                         </h2>
+                        {isBefore && (
+                            <div className={styles.msStoreCountdown}>
+                                <span className={styles.msStoreCountdownTitle}>
+                                    Time until Microsft Store release
+                                </span>
+                                <br />
+                                <div className={styles.msStoreCountdownLogo}>
+                                    <div>
+                                        <span>{countdown.days}</span>
+                                    </div>
+                                    <div>
+                                        <span>{countdown.hours}</span>
+                                    </div>
+                                    <div>
+                                        <span>{countdown.minutes}</span>
+                                    </div>
+                                    <div>
+                                        <span>{countdown.seconds}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
                     </div>
 
                     <div className={styles.downloadLinks}>
@@ -110,6 +172,14 @@ const Home: NextPage = () => {
                                 height={264}
                                 alt="GitHub"
                             />
+                        </a>
+                        <a className={isBefore ? styles.disabledLink : ""}>
+                            {/* @ts-ignore */}
+                            <ms-store-badge
+                                productid="9MTCXMKHMFG6"
+                                window-mode="full"
+                                /* @ts-ignore */
+                            ></ms-store-badge>
                         </a>
                     </div>
                 </div>

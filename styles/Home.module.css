@@ -72,7 +72,7 @@
 }
 
 .appExample {
-    width: 75%;
+    width: 50%;
     margin: 0 auto;
 }
 
@@ -97,47 +97,139 @@
 }
 
 .downloadLinks {
+    position: relative;
+    display: grid;
     width: 50%;
     margin: 50px auto 0 auto;
+    grid-template-columns: repeat(auto-fill, 50%);
+    gap: 20px 0;
 }
 
 .downloadLinks a {
-    display: inline-block;
-    margin: 5px;
+    display: block;
+    user-select: none;
 }
 
-.downloadLinks img {
-    width: 128px !important;
+.downloadLinks a.disabledLink {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.downloadLinks img,
+.downloadLinks ms-store-badge::part(img) {
+    width: 150px !important;
+    height: auto;
 }
 
 .featuresList {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 50px;
+    position: relative;
+    display: grid;
+    width: 100%;
+    margin: 50px auto 0 auto;
+    grid-template-columns: repeat(auto-fill, calc(32.5% - 25px));
+    grid-gap: 25px 50px;
 }
 
 .featuresFeature {
     position: relative;
     flex-basis: 300px;
+}
+
+.featuresFeatureItem {
     color: rgb(235, 235, 235);
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
     background-color: rgb(100, 100, 100);
     padding: 2.25rem 1.5rem;
+    border: 1px solid hsla(0,0%,71%,.56);
     border-radius: 16px;
     box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
 }
 
 .featureIcon {
     font-size: 60px;
 }
 
+.featureIconBrush {
+    --fa-secondary-color: rgb(103, 255, 126);
+}
+
+.featureIconRocket {
+    --fa-secondary-color: rgb(111, 193, 255);
+}
+
+.featureIconMeteor {
+    --fa-primary-opacity: 0.5;
+    --fa-secondary-opacity: 0.75;
+    --fa-secondary-color: rgb(255, 111, 111);
+}
+
 .featureDescription {
     font-size: 18px;
     line-height: 25px;
+}
+
+.msStoreCountdown {
+    display: block;
+    margin-top: 50px;
+    font-size: 20px;
+    color: rgb(200, 200, 200);
+}
+
+.msStoreCountdownTitle {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(200, 200, 200);
+}
+
+.msStoreCountdownLogo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 250px;
+    height: 250px;
+    margin: 25px auto 0;
+}
+
+.msStoreCountdownLogo > div {
+    position: relative;
+    width: 50%;
+    height: 50%;
+}
+
+.msStoreCountdownLogo > div::before {
+    content: "";
+    display: block;
+    width: 98%;
+    height: 98%;
+    background-color: rgb(255, 255, 255);
+    margin: 0 auto;
+}
+
+.msStoreCountdownLogo > div span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 175%;
+    font-weight: bold;
+    color: white;
+}
+
+.msStoreCountdownLogo > div:nth-child(1)::before {
+    background-color: #f25022;
+}
+
+.msStoreCountdownLogo > div:nth-child(2)::before {
+    background-color: #7fba00;
+}
+
+.msStoreCountdownLogo > div:nth-child(3)::before {
+    background-color: #00a4ef;
+}
+
+.msStoreCountdownLogo > div:nth-child(4)::before {
+    background-color: #ffb900;
 }
 
 .footer {
@@ -201,9 +293,12 @@
         text-align: center;
     }
 
-    .featuresFeature {
-        flex: 0 0 100%;
-        margin-bottom: 25px;
+    .appExample {
+        width: 75%;
+    }
+
+    .featuresList {
+        grid-template-columns: auto;
     }
 
     .footer {
@@ -215,11 +310,20 @@
     .footer > *:nth-child(n + 2) {
         margin-top: 15px;
     }
+
+    .downloadLinks {
+        width: 75%;
+        grid-template-columns: auto;
+    }
 }
 
 @media screen and (max-width: 1200px) {
     .section {
         width: 90%;
+    }
+
+    .appExample {
+        width: 60%;
     }
 
     .appExample img {
@@ -229,8 +333,8 @@
 }
 
 @media screen and (min-width: 500px) and (max-width: 1200px) {
-    .featuresFeature {
-        flex: 0 0 45%;
+    .featuresList {
+        grid-template-columns: repeat(auto-fill, calc(50% - 25px));
     }
 }
 
