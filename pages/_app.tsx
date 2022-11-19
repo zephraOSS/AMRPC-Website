@@ -110,10 +110,6 @@ function MyApp({ Component, pageProps }: AppProps) {
                 />
 
                 <link rel="manifest" href="/static/manifest.json" />
-                <link
-                    rel="stylesheet"
-                    href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css"
-                />
 
                 <title>AMRPC</title>
             </Head>
