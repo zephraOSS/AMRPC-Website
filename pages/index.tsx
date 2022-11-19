@@ -74,6 +74,7 @@ const Home: NextPage = () => {
                         width={1920}
                         height={1400}
                         alt="Screenshot of the app"
+                        priority
                     />
                 </div>
 
