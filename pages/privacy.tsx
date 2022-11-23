@@ -84,8 +84,8 @@ const Home: NextPage = () => {
                     Cookies are files with a small amount of data that are
                     commonly used as anonymous unique identifiers. These are
                     sent to your browser from the websites that you visit and
-                    are stored on your device's internal memory. This Service
-                    does not use these “cookies”.
+                    are stored on your device&apos;s internal memory. This
+                    Service does not use these “cookies”.
                 </p>
 
                 <h2>Service Providers</h2>
