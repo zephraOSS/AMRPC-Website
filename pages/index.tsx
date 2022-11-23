@@ -1,10 +1,13 @@
-import type { NextPage } from "next";
+import { Footer } from "../components/footer";
 
 import Image from "next/image";
 import Script from "next/script";
 import React from "react";
 
+import type { NextPage } from "next";
+
 import styles from "../styles/Home.module.css";
+import stylesHeader from "../styles/Header.module.css";
 
 const Home: NextPage = () => {
     const releaseDate = "2022-12-01T10:00:00Z",
@@ -46,11 +49,11 @@ const Home: NextPage = () => {
                 src="https://get.microsoft.com/badge/ms-store-badge.bundled.js"
             ></Script>
 
-            <div className={styles.header}>
-                <div className={styles.headerNavigation}>
+            <div className={stylesHeader.header}>
+                <div className={stylesHeader.headerNavigation}>
                     <a href="#download">Download</a>
                 </div>
-                <div className={styles.headerLogo}>
+                <div className={stylesHeader.headerLogo}>
                     <Image
                         src="/applemusic.png"
                         width={1260}
@@ -58,9 +61,9 @@ const Home: NextPage = () => {
                         alt="AMRPC Logo"
                     />
                 </div>
-                <div className={styles.headerTitle}>
-                    <h1 className={styles.titleTitle}>AMRPC</h1>
-                    <h2 className={styles.titleDescription}>
+                <div className={stylesHeader.headerTitle}>
+                    <h1 className={stylesHeader.titleTitle}>AMRPC</h1>
+                    <h2 className={stylesHeader.titleDescription}>
                         An Open-Source Discord RPC App for Apple Music and
                         iTunes
                     </h2>
@@ -192,27 +195,7 @@ const Home: NextPage = () => {
                 </div>
             </div>
 
-            <footer className={styles.footer}>
-                <div className={styles.footerNote}>
-                    <span>
-                        Made with 💖 by{" "}
-                        <a href="https://www.zephra.cloud">zephra</a>.
-                    </span>
-                </div>
-                <div className={styles.footerNote} style={{ display: "none" }}>
-                    <span>
-                        AMRPC is not affiliated with Apple or the Apple Music
-                        service.
-                    </span>
-                </div>
-                <div className={styles.footerLinks}>
-                    <a href="https://www.zephra.cloud/legal/imprint">Imprint</a>
-                    <a href="https://github.com/ZephraCloud/Apple-Music-RPC">
-                        GitHub
-                    </a>
-                    <a href="https://twitter.com/zephraCloud">Twitter</a>
-                </div>
-            </footer>
+            <Footer />
         </>
     );
 };

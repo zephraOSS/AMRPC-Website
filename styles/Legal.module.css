@@ -1,0 +1,32 @@
+.container {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.container p,
+.container li,
+.container a:hover {
+    color: rgb(200, 200, 200) !important;
+}
+
+.container h2 {
+    margin-top: 50px;
+}
+
+.container a {
+    color: #fa586a !important;
+    text-decoration: none;
+    transition: color 0.25s ease-in-out;
+}
+
+@media screen and (max-width: 500px) {
+    .container {
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 500px) and (max-width: 1200px) {
+    .container {
+        width: 80%;
+    }
+}
