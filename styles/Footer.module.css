@@ -30,3 +30,17 @@
 .footerLinks a:last-child {
     margin-right: 0;
 }
+
+@media screen and (max-width: 500px) {
+    .footer {
+        flex-wrap: wrap;
+        width: 95%;
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width: 500px) and (max-width: 1000px) {
+    .footer {
+        width: 75%;
+    }
+}
