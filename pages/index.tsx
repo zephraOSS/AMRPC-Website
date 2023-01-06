@@ -59,6 +59,7 @@ const Home: NextPage = () => {
                         width={1260}
                         height={1260}
                         alt="AMRPC Logo"
+                        priority
                     />
                 </div>
                 <div className={stylesHeader.headerTitle}>
@@ -90,7 +91,7 @@ const Home: NextPage = () => {
                                 <div className={styles.featureIcon}>
                                     <i
                                         className={[
-                                            "fa-duotone fa-brush",
+                                            "fa-duotone fa-album-collection-circle-user",
                                             styles.featureIconBrush
                                         ].join(" ")}
                                     ></i>
@@ -138,6 +139,54 @@ const Home: NextPage = () => {
                                         AMRPC is available for Apple Music and
                                         iTunes.
                                     </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className={styles.featuresFeature}>
+                            <div className={styles.featuresFeatureItem}>
+                                <div className={styles.featureIcon}>
+                                    <i
+                                        className={[
+                                            "fa-duotone fa-book-sparkles",
+                                            styles.featureIconBook
+                                        ].join(" ")}
+                                    ></i>
+                                </div>
+                                <div className={styles.featureDescription}>
+                                    <p>
+                                        You can customize the Discord RPC to
+                                        your liking!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className={styles.featuresFeature}>
+                            <div className={styles.featuresFeatureItem}>
+                                <div className={styles.featureIcon}>
+                                    <i
+                                        className={[
+                                            "fa-brands fa-lastfm",
+                                            styles.featureIconLastFM
+                                        ].join(" ")}
+                                    ></i>
+                                </div>
+                                <div className={styles.featureDescription}>
+                                    <p>
+                                        AMRPC supports{" "}
+                                        <a
+                                            href={"https://last.fm"}
+                                            target={"_blank"}
+                                            rel={"noreferrer"}
+                                        >
+                                            Last.fm
+                                        </a>{" "}
+                                        scrobbling!
+                                    </p>
+                                    <span className={styles.featureNote}>
+                                        Available for v4.1.0 or later
+                                    </span>
                                 </div>
                             </div>
                         </div>

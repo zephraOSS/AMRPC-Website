@@ -100,9 +100,35 @@
     --fa-secondary-color: rgb(255, 111, 111);
 }
 
+.featureIconBook {
+    --fa-primary-color: rgb(150, 200, 229);
+    --fa-secondary-color: rgb(133, 81, 189);
+    --fa-primary-opacity: 0.75;
+    --fa-secondary-opacity: 0.75;
+}
+
+.featureIconLastFM {
+    color: rgb(210, 30, 30);
+}
+
 .featureDescription {
     font-size: 18px;
     line-height: 25px;
+}
+
+.featureDescription a {
+    color: #fa586a;
+    text-decoration: none;
+    transition: text-shadow 0.25s ease-in-out;
+}
+
+.featureDescription a:hover {
+    text-shadow: 0 0 10px #fa586a;
+}
+
+.featureNote {
+    font-size: 14px;
+    color: rgb(200, 200, 200);
 }
 
 .msStoreCountdown {
