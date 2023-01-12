@@ -232,14 +232,14 @@ const Home: NextPage = () => {
                                 alt="GitHub"
                             />
                         </a>
-                        <a className={isBefore ? styles.disabledLink : ""}>
+                        <span className={isBefore ? styles.disabledLink : ""}>
                             {/* @ts-ignore */}
                             <ms-store-badge
                                 productid="9MTCXMKHMFG6"
                                 window-mode="full"
                                 /* @ts-ignore */
                             ></ms-store-badge>
-                        </a>
+                        </span>
                     </div>
                 </div>
             </div>

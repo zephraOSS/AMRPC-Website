@@ -42,7 +42,8 @@
     gap: 20px 0;
 }
 
-.downloadLinks a {
+.downloadLinks a,
+span {
     display: block;
     user-select: none;
 }
