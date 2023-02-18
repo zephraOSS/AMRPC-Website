@@ -43,7 +43,7 @@
 }
 
 .downloadLinks a,
-span {
+.downloadLinks span {
     display: block;
     user-select: none;
 }
