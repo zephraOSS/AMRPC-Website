@@ -1,0 +1,104 @@
+.stats {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.stat {
+}
+
+.stat:not(:last-child) {
+    margin-bottom: 3em;
+}
+
+.statTitle {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: rgb(200, 200, 200);
+    margin-bottom: 0.5em;
+}
+
+.statProgress {
+    position: relative;
+    width: 100%;
+    height: 20px;
+    background-color: rgb(129, 129, 129);
+    border-radius: 10px;
+}
+
+.statProgressFill {
+    height: 100%;
+    background: rgb(34, 193, 195);
+    background: linear-gradient(
+        45deg,
+        rgba(34, 193, 195, 1) 0%,
+        rgba(253, 187, 45, 1) 100%
+    );
+    border-radius: 9px;
+}
+
+.statProgressText {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+    font-size: 0.8em;
+    font-weight: bold;
+    line-height: 20px;
+}
+
+.statProgressTextTotal {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 0.8em;
+    font-weight: bold;
+    line-height: 20px;
+}
+
+.liveBadge {
+    position: absolute;
+    top: 50%;
+    font-size: 0.8em;
+    background: rgba(0, 0, 0, 1);
+    padding: 0.25em 0.5em 0.25em 1em;
+    border-radius: 10px;
+    margin-left: 10px;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    transform: translateY(-50%);
+}
+
+.liveBadge::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0.38em;
+    width: 8px;
+    height: 8px;
+    background-color: rgb(255, 0, 0);
+    border-radius: 50%;
+    transform: translateY(-50%);
+    animation: blink 1s ease-in-out infinite;
+}
+
+@media screen and (max-width: 1200px) {
+    .stats {
+        width: 90%;
+    }
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0.33;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.33;
+    }
+}
