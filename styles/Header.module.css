@@ -12,18 +12,22 @@
 }
 
 .headerNavigation {
+    display: grid;
     position: relative;
     width: 50%;
-    height: 50px;
-    margin: 0 auto;
-    text-align: left;
+    height: auto;
+    margin: 0 auto 4em auto;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 20px 20px;
 }
 
 .headerNavigation a {
+    width: fit-content;
     color: black;
     background-color: rgb(255, 255, 255);
     font-size: 16px;
-    padding: 7.5px 10px;
+    margin: 0 auto;
+    padding: 7.5px 15px;
     border-radius: 16px;
     text-decoration: none;
     transition: background-color 0.25s ease-in-out;
