@@ -13,6 +13,11 @@
     margin: 0 auto;
 }
 
+.appExample img {
+    width: 100%;
+    height: auto;
+}
+
 .section {
     width: 60%;
     margin: 50px auto 0 auto;
@@ -130,75 +135,6 @@
 .featureNote {
     font-size: 14px;
     color: rgb(200, 200, 200);
-}
-
-.msStoreCountdown {
-    display: block;
-    margin-top: 50px;
-    font-size: 20px;
-    color: rgb(200, 200, 200);
-}
-
-.msStoreCountdownTitle {
-    font-size: 20px;
-    font-weight: bold;
-    color: rgb(200, 200, 200);
-}
-
-.msStoreCountdownLogo {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    width: 250px;
-    height: 250px;
-    margin: 25px auto 0;
-    user-select: none;
-}
-
-.msStoreCountdownLogo > div {
-    position: relative;
-    width: 50%;
-    height: 50%;
-}
-
-.msStoreCountdownLogo > div::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 94%;
-    height: 94%;
-    background-color: rgb(255, 255, 255);
-    margin: 0 auto;
-}
-
-.msStoreCountdownLogo > div span {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 175%;
-    font-weight: bold;
-    color: white;
-}
-
-.msStoreCountdownLogo > div:nth-child(1)::before {
-    background-color: #f25022;
-}
-
-.msStoreCountdownLogo > div:nth-child(2)::before {
-    background-color: #7fba00;
-}
-
-.msStoreCountdownLogo > div:nth-child(3)::before {
-    background-color: #00a4ef;
-}
-
-.msStoreCountdownLogo > div:nth-child(4)::before {
-    background-color: #ffb900;
 }
 
 .comingSoonContainer {
