@@ -15,7 +15,9 @@ export default function Stats() {
         [totalDownloads, setTotalDownloads]: [
             totalDownloads: number,
             setTotalDownloads: React.Dispatch<any>
-        ] = React.useState(0);
+        ] = React.useState(0),
+        [status, setStatus]: [status: string, setStatus: React.Dispatch<any>] =
+            React.useState("Loading...");
 
     // as of 5/28/2023
     const msStoreAcquisitions = 2100;
@@ -23,40 +25,48 @@ export default function Stats() {
     React.useEffect(() => {
         setTotalDownloads(0);
         setStats([]);
+        setStatus("Loading...");
 
-        fetch(
-            "https://api.github.com/repos/zephraOSS/Apple-Music-RPC/releases"
-        ).then((res) => {
-            res.json().then((json) => {
-                const tempStats: Array<Object> = [];
+        fetch("https://api.github.com/repos/zephraOSS/Apple-Music-RPC/releases")
+            .then((res) => {
+                setStatus("Building...");
 
-                for (let i = 0; i <= 10; i++) {
-                    const data = json[i],
-                        obj = {
-                            version: data.tag_name,
-                            downloads: 0
-                        };
+                res.json().then((json) => {
+                    const tempStats: Array<Object> = [];
 
-                    data.assets.forEach((asset: any) => {
-                        obj.downloads += asset.download_count;
-                    });
+                    for (let i = 0; i <= 10; i++) {
+                        const data = json[i],
+                            obj = {
+                                version: data.tag_name,
+                                downloads: 0
+                            };
 
-                    tempStats.push(obj);
+                        data.assets.forEach((asset: any) => {
+                            obj.downloads += asset.download_count;
+                        });
 
-                    if (i === 10) {
-                        setStats(tempStats);
+                        tempStats.push(obj);
+
+                        if (i === 10) {
+                            setStats(tempStats);
+                        }
                     }
-                }
 
-                json.forEach((release: any) => {
-                    release.assets.forEach((asset: any) => {
-                        setTotalDownloads(
-                            (prev: number) => prev + asset.download_count
-                        );
+                    json.forEach((release: any) => {
+                        release.assets.forEach((asset: any) => {
+                            setTotalDownloads(
+                                (prev: number) => prev + asset.download_count
+                            );
+                        });
                     });
+
+                    setStatus("LIVE");
                 });
+            })
+            .catch((err) => {
+                setStatus("Failed");
+                console.error(err);
             });
-        });
     }, []);
 
     return (
@@ -128,7 +138,7 @@ export default function Stats() {
 
                     <h1 style={{ position: "relative" }}>
                         GitHub
-                        <span className={styles.liveBadge}>Live</span>
+                        <span className={styles.liveBadge}>{status}</span>
                     </h1>
 
                     <div className={styles.stat}>
