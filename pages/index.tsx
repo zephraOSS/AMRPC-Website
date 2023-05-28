@@ -1,47 +1,14 @@
 import { Footer } from "../components/footer";
 
 import Image from "next/image";
+import Link from "next/link";
 import Script from "next/script";
 import React from "react";
-
-import type { NextPage } from "next";
 
 import styles from "../styles/Home.module.css";
 import stylesHeader from "../styles/Header.module.css";
 
-const Home: NextPage = () => {
-    const releaseDate = "2022-12-01T10:00:00Z",
-        [isBefore, setIsBefore] = React.useState(
-            new Date().getTime() < new Date(releaseDate).getTime()
-        ),
-        [countdown, setCountdown] = React.useState({
-            days: 0,
-            hours: 0,
-            minutes: 0,
-            seconds: 0
-        });
-
-    React.useEffect(() => {
-        const interval = setInterval(() => {
-            const now = new Date().getTime(),
-                distance = new Date(releaseDate).getTime() - now,
-                days = Math.floor(distance / (1000 * 60 * 60 * 24)),
-                hours = Math.floor(
-                    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-                ),
-                minutes = Math.floor(
-                    (distance % (1000 * 60 * 60)) / (1000 * 60)
-                ),
-                seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            setCountdown({ days, hours, minutes, seconds });
-        }, 1000);
-
-        setIsBefore(new Date().getTime() < new Date(releaseDate).getTime());
-
-        return () => clearInterval(interval);
-    }, [releaseDate]);
-
+export default function Home() {
     return (
         <>
             <Script
@@ -51,7 +18,8 @@ const Home: NextPage = () => {
 
             <div className={stylesHeader.header}>
                 <div className={stylesHeader.headerNavigation}>
-                    <a href="#download">Download</a>
+                    <Link href={"/#download"}>Download</Link>
+                    <Link href={"/stats"}>Stats</Link>
                 </div>
                 <div className={stylesHeader.headerLogo}>
                     <Image
@@ -199,28 +167,6 @@ const Home: NextPage = () => {
                         <h2 className={styles.sectionDescription}>
                             Download AMRPC from GitHub or the Microsoft Store.
                         </h2>
-                        {isBefore && (
-                            <div className={styles.msStoreCountdown}>
-                                <span className={styles.msStoreCountdownTitle}>
-                                    Time until Microsft Store release
-                                </span>
-                                <br />
-                                <div className={styles.msStoreCountdownLogo}>
-                                    <div>
-                                        <span>{countdown.days}</span>
-                                    </div>
-                                    <div>
-                                        <span>{countdown.hours}</span>
-                                    </div>
-                                    <div>
-                                        <span>{countdown.minutes}</span>
-                                    </div>
-                                    <div>
-                                        <span>{countdown.seconds}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        )}
                     </div>
 
                     <div className={styles.downloadLinks}>
@@ -232,7 +178,7 @@ const Home: NextPage = () => {
                                 alt="GitHub"
                             />
                         </a>
-                        <span className={isBefore ? styles.disabledLink : ""}>
+                        <span>
                             {/* @ts-ignore */}
                             <ms-store-badge
                                 productid="9MTCXMKHMFG6"
@@ -247,6 +193,4 @@ const Home: NextPage = () => {
             <Footer />
         </>
     );
-};
-
-export default Home;
+}
