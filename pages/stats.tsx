@@ -34,6 +34,11 @@ export default function Stats() {
                 res.json().then((json) => {
                     const tempStats: Array<Object> = [];
 
+                    json.forEach((data: any) => {
+                        if (data.assets.length === 0)
+                            json.splice(json.indexOf(data), 1);
+                    });
+
                     for (let i = 0; i <= 10; i++) {
                         const data = json[i],
                             obj = {
