@@ -29,6 +29,8 @@ export default function Stats() {
 
         fetch("https://api.github.com/repos/zephraOSS/Apple-Music-RPC/releases")
             .then((res) => {
+                const ignoreFiles = ["latest.yml", "latest-mac.yml"];
+
                 setStatus("Building...");
 
                 res.json().then((json) => {
@@ -47,6 +49,8 @@ export default function Stats() {
                             };
 
                         data.assets.forEach((asset: any) => {
+                            if (ignoreFiles.includes(asset.name)) return;
+
                             obj.downloads += asset.download_count;
                         });
 
@@ -59,6 +63,8 @@ export default function Stats() {
 
                     json.forEach((release: any) => {
                         release.assets.forEach((asset: any) => {
+                            if (ignoreFiles.includes(asset.name)) return;
+
                             setTotalDownloads(
                                 (prev: number) => prev + asset.download_count
                             );
