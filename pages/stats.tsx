@@ -20,7 +20,8 @@ export default function Stats() {
             React.useState("Loading...");
 
     // as of 5/28/2023
-    const msStoreAcquisitions = 2100;
+    const msStoreAcquisitions = 2100,
+        maxCount = 3000;
 
     React.useEffect(() => {
         setTotalDownloads(0);
@@ -132,9 +133,11 @@ export default function Stats() {
                                 className={styles.statProgressFill}
                                 style={{
                                     width: `${
-                                        (msStoreAcquisitions / 5000) * 100 > 100
+                                        (msStoreAcquisitions / maxCount) * 100 >
+                                        100
                                             ? 100
-                                            : (msStoreAcquisitions / 5000) * 100
+                                            : (msStoreAcquisitions / maxCount) *
+                                              100
                                     }%`
                                 }}
                             ></div>
@@ -143,7 +146,7 @@ export default function Stats() {
                                 Acquisitions
                             </div>
                             <div className={styles.statProgressTextTotal}>
-                                5.000
+                                {maxCount.toLocaleString()}
                             </div>
                         </div>
                     </div>
@@ -161,9 +164,9 @@ export default function Stats() {
                                 className={styles.statProgressFill}
                                 style={{
                                     width: `${
-                                        (totalDownloads / 5000) * 100 > 100
+                                        (totalDownloads / maxCount) * 100 > 100
                                             ? 100
-                                            : (totalDownloads / 5000) * 100
+                                            : (totalDownloads / maxCount) * 100
                                     }%`
                                 }}
                             ></div>
@@ -171,7 +174,7 @@ export default function Stats() {
                                 {totalDownloads.toLocaleString()} Downloads
                             </div>
                             <div className={styles.statProgressTextTotal}>
-                                5.000
+                                {maxCount.toLocaleString()}
                             </div>
                         </div>
                     </div>
@@ -202,10 +205,12 @@ export default function Stats() {
                                         className={styles.statProgressFill}
                                         style={{
                                             width: `${
-                                                (stat.downloads / 5000) * 100 >
+                                                (stat.downloads / maxCount) *
+                                                    100 >
                                                 100
                                                     ? 100
-                                                    : (stat.downloads / 5000) *
+                                                    : (stat.downloads /
+                                                          maxCount) *
                                                       100
                                             }%`
                                         }}
@@ -217,7 +222,7 @@ export default function Stats() {
                                     <div
                                         className={styles.statProgressTextTotal}
                                     >
-                                        5.000
+                                        {maxCount.toLocaleString()}
                                     </div>
                                 </div>
                             </div>
