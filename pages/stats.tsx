@@ -45,6 +45,7 @@ export default function Stats() {
                         const data = json[i],
                             obj = {
                                 version: data.tag_name,
+                                published_at: data.published_at,
                                 downloads: 0
                             };
 
@@ -180,6 +181,20 @@ export default function Stats() {
                             <div className={styles.stat} key={stat.version}>
                                 <h1 className={styles.statTitle}>
                                     {stat.version}
+                                    <span
+                                        style={{
+                                            display: "block",
+                                            fontWeight: "normal",
+                                            fontSize: "0.9rem",
+                                            marginTop: "0.25rem",
+                                            opacity: "0.8"
+                                        }}
+                                    >
+                                        Released on{" "}
+                                        {new Date(
+                                            stat.published_at
+                                        ).toLocaleDateString()}
+                                    </span>
                                 </h1>
 
                                 <div className={styles.statProgress}>
