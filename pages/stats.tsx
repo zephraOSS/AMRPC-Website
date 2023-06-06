@@ -19,8 +19,8 @@ export default function Stats() {
         [status, setStatus]: [status: string, setStatus: React.Dispatch<any>] =
             React.useState("Loading...");
 
-    // as of 5/28/2023
-    const msStoreAcquisitions = 2100,
+    // as of 6/6/2023
+    const msStoreAcquisitions = 2220,
         maxCount = 3000;
 
     React.useEffect(() => {
@@ -124,7 +124,7 @@ export default function Stats() {
                                     opacity: "0.8"
                                 }}
                             >
-                                As of 5/28/2023
+                                As of 6/6/2023
                             </span>
                         </h1>
 
