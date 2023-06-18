@@ -20,7 +20,7 @@ export function Footer() {
                     </span>
                 </div>
                 <div className={styles.footerLinks}>
-                    <a href="https://github.com/ZephraCloud/Apple-Music-RPC">
+                    <a href="https://github.com/zephraOSS/Apple-Music-RPC">
                         GitHub
                     </a>
                     <a href="https://twitter.com/zephraCloud">Twitter</a>
