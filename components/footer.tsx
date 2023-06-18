@@ -24,7 +24,9 @@ export function Footer() {
                         GitHub
                     </a>
                     <a href="https://twitter.com/zephraCloud">Twitter</a>
-                    <a href="https://www.zephra.cloud/legal/imprint">Imprint</a>
+                    <a href="https://www.zephra.cloud/legal/notice">
+                        Legal Notice
+                    </a>
                     <Link href={"/privacy"}>Privacy Policy</Link>
                 </div>
             </footer>
