@@ -9,7 +9,7 @@ export default async function APIRoute(req: NextApiRequest, res: NextApiResponse
     const filePath = path.join(process.cwd(), "public", "releases.json");
 
     let content: UpdateStatsRes;
-    let updateReleases = false;
+    let updateReleases;
 
     if (fs.existsSync(filePath)) {
         content = JSON.parse(fs.readFileSync(filePath, "utf8"));
