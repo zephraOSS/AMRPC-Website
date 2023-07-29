@@ -22,7 +22,10 @@ export default function Stats() {
         ] = React.useState([]),
         [status, setStatus]: [status: string, setStatus: React.Dispatch<any>] =
             React.useState("Loading..."),
-        [selectedVer, setSelectedVer]: [selectedVer: string, setSelectedVer: React.Dispatch<any>] = React.useState("Latest");
+        [selectedVer, setSelectedVer]: [
+            selectedVer: string,
+            setSelectedVer: React.Dispatch<any>
+        ] = React.useState("Latest");
 
     // as of 7/29/2023
     const msStoreAcquisitions = 3150,
@@ -35,7 +38,14 @@ export default function Stats() {
 
         const tempStats: Array<Object> = [];
 
-        const curFilter = ["all", "latest", "curMajor", "allPre"][["All", "Latest", "Current Major", "All including Pre-Releases"].indexOf(option)],
+        const curFilter = ["all", "latest", "curMajor", "allPre"][
+                [
+                    "All",
+                    "Latest",
+                    "Current Major",
+                    "All including Pre-Releases"
+                ].indexOf(option)
+            ],
             curMajor = rel[0].tag_name.split(".")[0];
 
         const filtered = rel.filter((release: any) => {
@@ -56,7 +66,11 @@ export default function Stats() {
                 filtered.splice(filtered.indexOf(release), 1);
         });
 
-        for (let i = 0; i < (curFilter === "latest" ? 11 : filtered.length); i++) {
+        for (
+            let i = 0;
+            i < (curFilter === "latest" ? 11 : filtered.length);
+            i++
+        ) {
             const data = filtered[i],
                 obj = {
                     version: data.tag_name,
@@ -87,9 +101,10 @@ export default function Stats() {
 
         console.info("Fetching releases...");
 
-        fetch("https://api.github.com/repos/zephraOSS/Apple-Music-RPC/releases?per_page=100")
+        fetch(
+            "https://api.github.com/repos/zephraOSS/Apple-Music-RPC/releases?per_page=100"
+        )
             .then((res) => {
-
                 setStatus("Building...");
 
                 res.json().then((data) => {
@@ -174,7 +189,7 @@ export default function Stats() {
                                         100
                                             ? 100
                                             : (msStoreAcquisitions / maxCount) *
-                                            100
+                                              100
                                     }%`
                                 }}
                             ></div>
@@ -194,10 +209,20 @@ export default function Stats() {
                     </h1>
 
                     <div className={styles.selectVersions}>
-                        {["All", "Latest", "Current Major", "All including Pre-Releases"].map((option) => {
+                        {[
+                            "All",
+                            "Latest",
+                            "Current Major",
+                            "All including Pre-Releases"
+                        ].map((option) => {
                             return (
                                 <div
-                                    className={[styles.selectVersion, selectedVer === option ? styles.selected : ""].join(" ")}
+                                    className={[
+                                        styles.selectVersion,
+                                        selectedVer === option
+                                            ? styles.selected
+                                            : ""
+                                    ].join(" ")}
                                     onClick={() => {
                                         setSelectedVer(option);
                                         updateStats(undefined, option);
@@ -260,12 +285,12 @@ export default function Stats() {
                                         style={{
                                             width: `${
                                                 (stat.downloads / maxCount) *
-                                                100 >
+                                                    100 >
                                                 100
                                                     ? 100
                                                     : (stat.downloads /
-                                                        maxCount) *
-                                                    100
+                                                          maxCount) *
+                                                      100
                                             }%`
                                         }}
                                     ></div>
