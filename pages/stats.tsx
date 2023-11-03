@@ -27,8 +27,8 @@ export default function Stats() {
             setSelectedVer: React.Dispatch<any>
         ] = React.useState("Latest");
 
-    // as of 10/13/2023
-    const msStoreAcquisitions = 4700,
+    // as of 11/3/2023
+    const msStoreAcquisitions = 5200,
         maxCount = 3000;
 
     const ignoreFiles = ["latest.yml", "latest-mac.yml"];
@@ -176,7 +176,7 @@ export default function Stats() {
                                     opacity: "0.8"
                                 }}
                             >
-                                As of 10/13/2023
+                                As of 11/3/2023
                             </span>
                         </h1>
 
